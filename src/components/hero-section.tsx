@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronRight, Mail, SendHorizonal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { TextEffect } from "@/components/ui/text-effect";
@@ -137,7 +137,7 @@ export default function HeroSection() {
 									}}
 									className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row"
 								>
-									<div
+									{/* <div
 										key={1}
 										className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5"
 									>
@@ -150,18 +150,44 @@ export default function HeroSection() {
 												<span className="text-nowrap">Start Monitoring</span>
 											</Link>
 										</Button>
-									</div>
+									</div> */}
 									<Button
 										key={2}
 										asChild
 										size="lg"
-										variant="ghost"
+										variant="default"
 										className="h-10.5 rounded-xl px-5"
 									>
 										<Link href="https://demo.playground.basicrum.com/">
 											<span className="text-nowrap">See Demo</span>
 										</Link>
 									</Button>
+									<form action="" className="mx-auto max-w-sm">
+										<div className="bg-background has-[input:focus]:ring-muted relative grid grid-cols-[1fr_auto] items-center rounded-[calc(var(--radius)+0.5rem)] border pr-2 shadow shadow-zinc-950/5 has-[input:focus]:ring-2">
+											<Mail className="pointer-events-none absolute inset-y-0 left-4 my-auto size-4" />
+
+											<input
+												placeholder="Your mail address"
+												className="h-12 w-full bg-transparent pl-12 focus:outline-none"
+												type="email"
+											/>
+
+											<div className="md:pr-1.5 lg:pr-0">
+												<Button
+													aria-label="submit"
+													size="sm"
+													variant="ghost"
+													className="rounded-(--radius)"
+												>
+													<span className="hidden md:block">Get Started</span>
+													<SendHorizonal
+														className="relative mx-auto size-5 md:hidden"
+														strokeWidth={2}
+													/>
+												</Button>
+											</div>
+										</div>
+									</form>
 								</AnimatedGroup>
 							</div>
 						</div>
