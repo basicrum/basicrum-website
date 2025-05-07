@@ -27,7 +27,7 @@ export default function Pricing() {
 
 							<span className="my-3 block text-2xl font-semibold">$0 / mo</span>
 
-							<CardDescription className="text-sm">Per editor</CardDescription>
+							<CardDescription className="text-sm">-</CardDescription>
 							<Button asChild variant="outline" className="mt-4 w-full">
 								<Link href="">Get Started</Link>
 							</Button>
@@ -37,22 +37,20 @@ export default function Pricing() {
 							<hr className="border-dashed" />
 
 							<ul className="list-outside space-y-3 text-sm">
-								{[
-									"Basic Analytics Dashboard",
-									"5GB Cloud Storage",
-									"Email and Chat Support",
-								].map((item, index) => (
-									<li key={index} className="flex items-center gap-2">
-										<Check className="size-3" />
-										{item}
-									</li>
-								))}
+								{["Self-hosted", "Most features available"].map(
+									(item, index) => (
+										<li key={index} className="flex items-center gap-2">
+											<Check className="size-3" />
+											{item}
+										</li>
+									),
+								)}
 							</ul>
 						</CardContent>
 					</Card>
 
 					<Card className="relative">
-						<span className="bg-linear-to-br/increasing absolute inset-x-0 -top-3 mx-auto flex h-6 w-fit items-center rounded-full from-purple-400 to-amber-300 px-3 py-1 text-xs font-medium text-amber-950 ring-1 ring-inset ring-white/20 ring-offset-1 ring-offset-gray-950/5">
+						<span className="bg-linear-to-br/increasing absolute inset-x-0 -top-3 mx-auto flex h-6 w-fit items-center rounded-full from-green-400 to-amber-300 px-3 py-1 text-xs font-medium text-amber-950 ring-1 ring-inset ring-white/20 ring-offset-1 ring-offset-gray-950/5">
 							Popular
 						</span>
 
