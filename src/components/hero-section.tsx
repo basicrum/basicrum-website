@@ -40,7 +40,7 @@ export default function HeroSection() {
 				</div>
 				<section>
 					<div className="relative pt-24 md:pt-36">
-						<AnimatedGroup
+						{/* <AnimatedGroup
 							variants={{
 								container: {
 									visible: {
@@ -74,8 +74,8 @@ export default function HeroSection() {
 								width="3276"
 								height="4095"
 							/>
-						</AnimatedGroup>
-						<div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"></div>
+						</AnimatedGroup> */}
+						<div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]" />
 						<div className="mx-auto max-w-7xl px-6">
 							<div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
 								<AnimatedGroup variants={transitionVariants}>
@@ -86,7 +86,7 @@ export default function HeroSection() {
 										<span className="text-foreground text-sm">
 											Introducing Basicrum 1.0
 										</span>
-										<span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
+										<span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700" />
 
 										<div className="bg-background group-hover:bg-muted size-6 overflow-hidden rounded-full duration-500">
 											<div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
