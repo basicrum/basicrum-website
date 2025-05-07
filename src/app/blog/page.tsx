@@ -1,4 +1,6 @@
-import ContentSection, { ContentSectionProps } from "@/components/content-4";
+import ContentSection, {
+	type ContentSectionProps,
+} from "@/components/content-4";
 
 const blogPosts: ContentSectionProps[] = [
 	{
