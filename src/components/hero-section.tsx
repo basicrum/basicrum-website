@@ -160,7 +160,11 @@ export default function HeroSection() {
 											<span className="text-nowrap">See Demo</span>
 										</Link>
 									</Button>
-									<form action="" className="mx-auto max-w-sm">
+									<form
+										action="https://api.web3forms.com/submit"
+										method="POST"
+										className="mx-auto max-w-sm"
+									>
 										<div className="bg-background has-[input:focus]:ring-muted relative grid grid-cols-[1fr_auto] items-center rounded-[calc(var(--radius)+0.5rem)] border pr-2 shadow shadow-zinc-950/5 has-[input:focus]:ring-2">
 											<Mail className="pointer-events-none absolute inset-y-0 left-4 my-auto size-4" />
 
@@ -168,8 +172,19 @@ export default function HeroSection() {
 												placeholder="Your mail address"
 												className="h-12 w-full bg-transparent pl-12 focus:outline-none"
 												type="email"
+												name="email"
 											/>
-
+											<input
+												type="hidden"
+												name="access_key"
+												value="53f82be5-9942-437a-bc85-34cedca69437"
+											/>
+											<input
+												type="checkbox"
+												name="botcheck"
+												className="hidden"
+												style={{ display: "none" }}
+											/>
 											<div className="md:pr-1.5 lg:pr-0">
 												<Button
 													aria-label="submit"
