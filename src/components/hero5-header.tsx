@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import React from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const menuItems = [
 	{ name: "Features", href: "/features" },
@@ -18,6 +19,8 @@ const menuItems = [
 export const HeroHeader = () => {
 	const [menuState, setMenuState] = React.useState(false);
 	const [isScrolled, setIsScrolled] = React.useState(false);
+
+	const pathname = usePathname();
 
 	React.useEffect(() => {
 		const handleScroll = () => {
@@ -74,7 +77,13 @@ export const HeroHeader = () => {
 											href={item.href}
 											className="text-muted-foreground hover:text-accent-foreground block duration-150"
 										>
-											<span>{item.name}</span>
+											<span
+												className={
+													pathname === item.href ? "text-accent-foreground" : ""
+												}
+											>
+												{item.name}
+											</span>
 										</Link>
 									</li>
 								))}
