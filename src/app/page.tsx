@@ -1,3 +1,4 @@
+import CallToAction from "@/components/call-to-action";
 import FeaturesSection from "@/components/content-5";
 import { FeaturesSectionGraphed } from "@/components/features-9";
 
@@ -9,6 +10,7 @@ export default function Home() {
 			<HeroSection />
 			<FeaturesSectionGraphed />
 			<FeaturesSection />
+			<CallToAction />
 		</>
 	);
 }
