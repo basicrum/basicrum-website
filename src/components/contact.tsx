@@ -30,19 +30,19 @@ export default function ContactSection() {
 							>
 								tsto@basicrum.com
 							</Link>
-							<p className="mt-3 text-sm">+49 123 456 789</p>
+							{/* <p className="mt-3 text-sm">+49 123 456 789</p> */}
 						</div>
 					</div>
 					<div className="flex flex-col justify-between space-y-8 p-6 sm:p-12">
 						<div>
-							<h3 className="mb-3 text-lg font-semibold">Press</h3>
+							<h3 className="mb-3 text-lg font-semibold">Support</h3>
 							<Link
-								href="mailto:press@basicrum.com"
+								href="https://x.com/basicrum"
 								className="text-lg text-blue-600 hover:underline dark:text-blue-400"
 							>
-								press@basicrum.com
+								@basicrum
 							</Link>
-							<p className="mt-3 text-sm">+49 123 456 789</p>
+							{/* <p className="mt-3 text-sm">+49 123 456 789</p> */}
 						</div>
 					</div>
 				</div>

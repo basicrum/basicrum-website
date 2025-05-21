@@ -13,7 +13,8 @@ const FEATURES = [
 	{
 		icon: Zap,
 		title: "Fast",
-		description: "Basicrum is performance oriented from get go.",
+		description:
+			"Basicrum is performance oriented from get go. Ready to handle high traffic.",
 	},
 	{
 		icon: Cpu,
@@ -42,12 +43,13 @@ const FEATURES = [
 		icon: Feather,
 		title: "Lightweight",
 		description:
-			"Basicrum is lightweight and easy to install. It runs on any server with Node.js.",
+			"The app is lightweight and easy to install. It runs on any server with Node.js.",
 	},
 	{
 		icon: EarthLock,
 		title: "Hosted in EU",
-		description: "Basicrum is hosted in EU and complies with GDPR regulations.",
+		description:
+			"We host exclusively in the EU and comply with GDPR regulations.",
 	},
 	{
 		icon: DatabaseZap,
