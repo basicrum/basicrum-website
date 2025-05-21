@@ -1,4 +1,61 @@
-import { Cpu, Lock, Sparkles, Zap } from "lucide-react";
+import {
+	Cpu,
+	DatabaseZap,
+	EarthLock,
+	Feather,
+	Lock,
+	PackageOpen,
+	Sparkles,
+	Zap,
+} from "lucide-react";
+
+const FEATURES = [
+	{
+		icon: Zap,
+		title: "Fast",
+		description: "Basicrum is performance oriented from get go.",
+	},
+	{
+		icon: Cpu,
+		title: "Powerful",
+		description:
+			"Shipped with a powerful dashboard and a set of widgets to help users monitor their users effectively.",
+	},
+	{
+		icon: Lock,
+		title: "Privacy",
+		description: "Hosted in EU and GDPR compliant",
+	},
+	{
+		icon: Sparkles,
+		title: "AI Enhanced",
+		description:
+			"We use RAG to help users facilitate LLMs to extract more fine grained information",
+	},
+	{
+		icon: PackageOpen,
+		title: "Open Source",
+		description:
+			"Basicrum is open source and free to use. You can self host it or use our hosted version.",
+	},
+	{
+		icon: Feather,
+		title: "Lightweight",
+		description:
+			"Basicrum is lightweight and easy to install. It runs on any server with Node.js.",
+	},
+	{
+		icon: EarthLock,
+		title: "Hosted in EU",
+		description: "Basicrum is hosted in EU and complies with GDPR regulations.",
+	},
+	{
+		icon: DatabaseZap,
+		title: "Powered by Clickhouse",
+		description:
+			"Basicrum is powered by Clickhouse, a fast open-source OLAP database management system.",
+	},
+];
 
 export default function FeaturesSection() {
 	return (
@@ -15,54 +72,22 @@ export default function FeaturesSection() {
 					</p>
 				</div>
 				<img
-					className="rounded-(--radius) grayscale"
-					src="/app-home.png"
+					className="rounded-(--radius)"
+					src="/lcp.png"
 					alt="about-basicrum"
-					height=""
-					width=""
 					loading="lazy"
 				/>
 
 				<div className="relative mx-auto grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-8 lg:grid-cols-4">
-					<div className="space-y-3">
-						<div className="flex items-center gap-2">
-							<Zap className="size-4" />
-							<h3 className="text-sm font-medium">Fast</h3>
+					{FEATURES.map(({ icon: Icon, title, description }) => (
+						<div key={title} className="space-y-2">
+							<div className="flex items-center gap-2">
+								<Icon className="size-4" />
+								<h3 className="text-sm font-medium">{title}</h3>
+							</div>
+							<p className="text-muted-foreground text-sm">{description}</p>
 						</div>
-						<p className="text-muted-foreground text-sm">
-							Basicrum is performance oriented from get go.
-						</p>
-					</div>
-					<div className="space-y-2">
-						<div className="flex items-center gap-2">
-							<Cpu className="size-4" />
-							<h3 className="text-sm font-medium">Powerful</h3>
-						</div>
-						<p className="text-muted-foreground text-sm">
-							Shipped with a powerful dashboard and a set of widgets to help
-							users monitor their users effectively.
-						</p>
-					</div>
-					<div className="space-y-2">
-						<div className="flex items-center gap-2">
-							<Lock className="size-4" />
-							<h3 className="text-sm font-medium">Privacy</h3>
-						</div>
-						<p className="text-muted-foreground text-sm">
-							Hosted in EU and GDPR compliant
-						</p>
-					</div>
-					<div className="space-y-2">
-						<div className="flex items-center gap-2">
-							<Sparkles className="size-4" />
-
-							<h3 className="text-sm font-medium">AI Powered</h3>
-						</div>
-						<p className="text-muted-foreground text-sm">
-							We use RAG to help users facilitate LLMs to extract more fine
-							grained information
-						</p>
-					</div>
+					))}
 				</div>
 			</div>
 		</section>

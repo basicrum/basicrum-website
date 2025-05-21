@@ -2,25 +2,25 @@ import Image from "next/image";
 import Link from "next/link";
 
 const links = [
-	{
-		title: "Features",
-		href: "#",
-	},
+	// {
+	// 	title: "Features",
+	// 	href: "#",
+	// },
 	{
 		title: "Blog",
-		href: "#",
+		href: "/blog",
 	},
 	{
 		title: "Pricing",
-		href: "#",
+		href: "/pricing",
 	},
 	{
-		title: "Help",
-		href: "#",
+		title: "Contact",
+		href: "/contact",
 	},
 	{
 		title: "About",
-		href: "#",
+		href: "/about",
 	},
 ];
 

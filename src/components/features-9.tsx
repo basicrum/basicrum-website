@@ -10,7 +10,7 @@ import {
 	ChartTooltipContent,
 } from "@/components/ui/chart";
 
-export default function FeaturesSection() {
+export function FeaturesSectionGraphed() {
 	return (
 		<section className="px-4 py-16 md:py-32">
 			<div className="mx-auto grid max-w-5xl border md:grid-cols-2">

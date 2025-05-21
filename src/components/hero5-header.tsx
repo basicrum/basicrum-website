@@ -9,7 +9,8 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const menuItems = [
-	{ name: "Features", href: "/features" },
+	{ name: "Home", href: "/" },
+	// { name: "Features", href: "/features" },
 	{ name: "Blog", href: "/blog" },
 	{ name: "Pricing", href: "/pricing" },
 	{ name: "About", href: "/about" },
