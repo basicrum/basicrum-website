@@ -45,7 +45,7 @@ export default function FooterSection() {
 				</div>
 				<div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
 					<Link
-						href="#"
+						href="https://twitter.com/Basicrum"
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label="X/Twitter"
@@ -66,7 +66,7 @@ export default function FooterSection() {
 						</svg>
 					</Link>
 					<Link
-						href="#"
+						href="https://www.linkedin.com/company/basicrum"
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label="LinkedIn"
