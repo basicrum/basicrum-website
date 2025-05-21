@@ -48,7 +48,11 @@ export default function ContactSection() {
 				</div>
 
 				<div className="h-3 border-x bg-[repeating-linear-gradient(-45deg,var(--color-border),var(--color-border)_1px,transparent_1px,transparent_6px)]" />
-				<form action="" className="border px-4 py-12 lg:px-0 lg:py-24">
+				<form
+					action="https://api.web3forms.com/submit"
+					method="POST"
+					className="border px-4 py-12 lg:px-0 lg:py-24"
+				>
 					<Card className="mx-auto max-w-lg p-8 sm:p-16">
 						<h3 className="text-xl font-semibold">Feedback form</h3>
 						<p className="mt-4 text-sm">
@@ -61,13 +65,13 @@ export default function ContactSection() {
 								<Label htmlFor="name" className="space-y-2">
 									Full name
 								</Label>
-								<Input type="text" id="name" required />
+								<Input type="text" id="name" required name="name" />
 							</div>
 							<div>
 								<Label htmlFor="email" className="space-y-2">
 									Work Email
 								</Label>
-								<Input type="email" id="email" required />
+								<Input type="email" id="email" required name="email" />
 							</div>
 							{/* <div>
                                 <Label
@@ -86,11 +90,22 @@ export default function ContactSection() {
                                     </SelectContent>
                                 </Select>
                             </div> */}
+							<input
+								type="hidden"
+								name="access_key"
+								value="53f82be5-9942-437a-bc85-34cedca69437"
+							/>
+							<input
+								type="checkbox"
+								name="botcheck"
+								className="hidden"
+								style={{ display: "none" }}
+							/>
 							<div>
 								<Label htmlFor="website" className="space-y-2">
 									Company Website
 								</Label>
-								<Input type="url" id="website" />
+								<Input type="url" id="website" name="website" />
 							</div>
 							{/* <div>
                                 <Label
@@ -114,9 +129,11 @@ export default function ContactSection() {
 								<Label htmlFor="msg" className="space-y-2">
 									Message
 								</Label>
-								<Textarea id="msg" rows={3} />
+								<Textarea id="msg" rows={3} name="message" />
 							</div>
-							<Button>Submit</Button>
+							<Button aria-label="submit" type="submit">
+								Submit
+							</Button>
 						</div>
 					</Card>
 				</form>
