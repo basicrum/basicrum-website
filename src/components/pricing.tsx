@@ -29,7 +29,7 @@ export default function Pricing() {
 
 							<CardDescription className="text-sm">-</CardDescription>
 							<Button asChild variant="outline" className="mt-4 w-full">
-								<Link href="">Get Started</Link>
+								<Link href="">Coming Soon</Link>
 							</Button>
 						</CardHeader>
 
@@ -58,13 +58,13 @@ export default function Pricing() {
 							<CardTitle className="font-medium">Pro</CardTitle>
 
 							<span className="my-3 block text-2xl font-semibold">
-								$19 / mo
+								$ / mo
 							</span>
 
-							<CardDescription className="text-sm">Per editor</CardDescription>
+							<CardDescription className="text-sm">Per user</CardDescription>
 
 							<Button asChild className="mt-4 w-full">
-								<Link href="">Get Started</Link>
+								<Link href="">Coming Soon</Link>
 							</Button>
 						</CardHeader>
 
@@ -77,10 +77,6 @@ export default function Pricing() {
 									"5GB Cloud Storage",
 									"Email and Chat Support",
 									"Access to Community Forum",
-									"Single User Access",
-									"Access to Basic Templates",
-									"Mobile App Access",
-									"1 Custom Report Per Month",
 									"Monthly Product Updates",
 									"Standard Security Features",
 								].map((item, index) => (
@@ -95,16 +91,16 @@ export default function Pricing() {
 
 					<Card className="flex flex-col">
 						<CardHeader>
-							<CardTitle className="font-medium">Startup</CardTitle>
+							<CardTitle className="font-medium">Enterprise</CardTitle>
 
 							<span className="my-3 block text-2xl font-semibold">
-								$29 / mo
+								$$ / mo
 							</span>
 
-							<CardDescription className="text-sm">Per editor</CardDescription>
+							<CardDescription className="text-sm">Per user</CardDescription>
 
 							<Button asChild variant="outline" className="mt-4 w-full">
-								<Link href="">Get Started</Link>
+								<Link href="">Coming Soon</Link>
 							</Button>
 						</CardHeader>
 
