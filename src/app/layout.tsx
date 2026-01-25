@@ -33,14 +33,14 @@ export default function RootLayout({
 				<Script id="boomr-init" strategy="beforeInteractive">
 					{`
 							BOOMR.init({
-								beacon_url: "${process.env.NEXT_PUBLIC_BEACON_URL ?? "http://127.0.0.1:8080/beacon/catcher"}",
+								beacon_url: "${process.env.NEXT_PUBLIC_BEACON_URL}",
 								ResourceTiming: {
 									enabled: true,
 									clearOnBeacon: true
 								}
 							})
 							BOOMR.addVar({
-  "site_id": "basicrum_website_1"
+  "brum_site_id": "basicrum_website_1"
 });
 						`}
 				</Script>
