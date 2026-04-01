@@ -17,6 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://www.basicrum.com"),
 	title: "Basicrum",
 	description: "Open Source - Real User Monitoring system",
 };
