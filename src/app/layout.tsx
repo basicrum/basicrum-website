@@ -27,7 +27,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="en" className="dark">
 			<head>
 				<Script src="/boomerang.min.js" strategy="beforeInteractive" />
 				<Script id="boomr-init" strategy="beforeInteractive">
