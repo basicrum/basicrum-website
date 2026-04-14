@@ -17,6 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://www.basicrum.com"),
 	title: "Basicrum",
 	description: "Open Source - Real User Monitoring system",
 };
@@ -27,7 +28,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="en" className="dark">
 			<head></head>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
