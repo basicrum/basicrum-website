@@ -19,6 +19,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@basicrum/beacon-client@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "@basicrum/beacon-client@npm:0.1.1"
+  peerDependencies:
+    react: ">=18"
+  peerDependenciesMeta:
+    react:
+      optional: true
+  checksum: c2225629131061b4153773c7fe5038e88f2d03d6cb8907acfff1b93b858ca198b16ed0e3164cd7b295c154ccf3c17673f78fb3b5e62a400af5b32f95f2c8c5e5
+  languageName: node
+  linkType: hard
+
 "@emnapi/core@npm:^1.4.0, @emnapi/core@npm:^1.4.3":
   version: 1.4.3
   resolution: "@emnapi/core@npm:1.4.3"
@@ -1124,6 +1136,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "basicrum-website@workspace:."
   dependencies:
+    "@basicrum/beacon-client": ^0.1.1
     "@radix-ui/react-label": ^2.1.6
     "@radix-ui/react-select": ^2.2.4
     "@radix-ui/react-slot": ^1.2.3

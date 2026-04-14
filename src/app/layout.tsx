@@ -4,7 +4,7 @@ import "./globals.css";
 import { Providers } from "@/providers/providers";
 import { HeroHeader } from "@/components/hero5-header";
 import FooterSection from "@/components/footer";
-import Script from "next/script";
+import { BasicRumBeacon } from "@basicrum/beacon-client/react";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -28,26 +28,14 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<head>
-				<Script src="/boomerang.min.js" strategy="beforeInteractive" />
-				<Script id="boomr-init" strategy="beforeInteractive">
-					{`
-							BOOMR.init({
-								beacon_url: "${process.env.NEXT_PUBLIC_BEACON_URL}",
-								ResourceTiming: {
-									enabled: true,
-									clearOnBeacon: true
-								}
-							})
-							BOOMR.addVar({
-  "brum_site_id": "basicrum_website_1"
-});
-						`}
-				</Script>
-			</head>
+			<head></head>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
+				<BasicRumBeacon
+					beaconUrl={process.env.NEXT_PUBLIC_BEACON_URL || ""}
+					siteId="basicrum-website-1"
+				/>
 				<Providers>
 					<HeroHeader />
 					{children}
