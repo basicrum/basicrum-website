@@ -189,7 +189,7 @@ const LCPBreakdown = () => (
 
 export const RedSection = () => {
     return (
-        <section className="min-h-screen bg-[#ff004d] flex flex-col items-center justify-center px-6 py-24">
+        <section data-bg="red" className="min-h-screen flex flex-col items-center justify-center px-6 py-24">
             <div className="flex flex-col items-center gap-16 max-w-6xl w-full">
                 <motion.div
                     className="text-center text-white space-y-5"

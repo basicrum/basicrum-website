@@ -38,7 +38,7 @@ const streakData = [
 
 export const GreenSection = () => {
     return (
-        <section className="min-h-screen bg-[#008751] flex flex-col items-center justify-center px-6 py-24">
+        <section data-bg="green" className="min-h-screen flex flex-col items-center justify-center px-6 py-24">
             <div className="flex flex-col gap-12 max-w-6xl w-full mx-auto">
                 {/* Headline — centered */}
                 <motion.div

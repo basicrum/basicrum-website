@@ -47,7 +47,7 @@ const badge = {
 
 export const YellowSection = () => {
     return (
-        <section className="min-h-screen bg-[#ffa300] flex items-center px-6 py-24">
+        <section data-bg="yellow" className="min-h-screen flex items-center px-6 py-24">
             <div className="flex flex-col md:flex-row gap-12 max-w-6xl w-full mx-auto items-start">
                 {/* Left: headline */}
                 <motion.div
