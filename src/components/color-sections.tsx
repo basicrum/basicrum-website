@@ -33,10 +33,10 @@ export const ColorSections = () => {
     return (
         <>
             <div aria-hidden className="fixed inset-0" style={{ backgroundColor: DEFAULT_BG, zIndex: -15 }} />
-            <motion.div aria-hidden className="fixed inset-0" style={{ backgroundColor: "#ff004d", y: redY, zIndex: -14 }} />
-            <motion.div aria-hidden className="fixed inset-0" style={{ backgroundColor: "#ffa300", y: yellowY, zIndex: -13 }} />
-            <motion.div aria-hidden className="fixed inset-0" style={{ backgroundColor: "#008751", y: greenY, zIndex: -12 }} />
-            <motion.div aria-hidden className="fixed inset-0" style={{ backgroundColor: DEFAULT_BG, y: whiteY, zIndex: -11 }} />
+            <motion.div aria-hidden className="fixed inset-0" style={{ backgroundColor: "#ff004d", y: redY, zIndex: -14, clipPath: "polygon(0 10%, 100% 0%, 100% 100%, 0 100%)" }} />
+            <motion.div aria-hidden className="fixed inset-0" style={{ backgroundColor: "#ffa300", y: yellowY, zIndex: -13, clipPath: "polygon(0 10%, 100% 0%, 100% 100%, 0 100%)" }} />
+            <motion.div aria-hidden className="fixed inset-0" style={{ backgroundColor: "#008751", y: greenY, zIndex: -12, clipPath: "polygon(0 10%, 100% 0%, 100% 100%, 0 100%)" }} />
+            <motion.div aria-hidden className="fixed inset-0" style={{ backgroundColor: DEFAULT_BG, y: whiteY, zIndex: -11, clipPath: "polygon(0 10%, 100% 0%, 100% 100%, 0 100%)" }} />
             <div ref={redRef}><RedSection /></div>
             <div ref={yellowRef}><YellowSection /></div>
             <div ref={greenRef}><GreenSection /></div>

@@ -75,7 +75,7 @@ export const WhiteSection = () => {
                 transition={{ delay: 0.5, duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
                 <h2 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight">
-                    Light at the end<br />of the tunnel.
+                    <span style={{ textShadow: `0 0 24px ${GREEN}, 0 0 48px ${GREEN}80` }}>Light</span> at the end<br />of the tunnel.
                 </h2>
                 <p className="text-lg max-w-md text-white/50">
                     Most websites never find out why they&apos;re slow.<br />Yours doesn&apos;t have to be one of them.
