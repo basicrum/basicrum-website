@@ -9,6 +9,11 @@ import { WhiteSection } from "./white-section";
 
 const DEFAULT_BG = "#09090b";
 
+// Extend each layer 12vh above the viewport so the slant notch is above
+// the visible area when the layer is fully in view (y=0), preventing bleed-through.
+// 10.8% of 112vh ≈ 12.1vh, which lands just at the viewport top edge.
+const SLANT_CLIP = "polygon(0 10.8%, 100% 0%, 100% 100%, 0 100%)";
+
 function useSlideUp(ref: React.RefObject<HTMLDivElement | null>) {
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -33,10 +38,10 @@ export const ColorSections = () => {
     return (
         <>
             <div aria-hidden className="fixed inset-0" style={{ backgroundColor: DEFAULT_BG, zIndex: -15 }} />
-            <motion.div aria-hidden className="fixed inset-0" style={{ backgroundColor: "#ff004d", y: redY, zIndex: -14, clipPath: "polygon(0 10%, 100% 0%, 100% 100%, 0 100%)" }} />
-            <motion.div aria-hidden className="fixed inset-0" style={{ backgroundColor: "#ffa300", y: yellowY, zIndex: -13, clipPath: "polygon(0 10%, 100% 0%, 100% 100%, 0 100%)" }} />
-            <motion.div aria-hidden className="fixed inset-0" style={{ backgroundColor: "#008751", y: greenY, zIndex: -12, clipPath: "polygon(0 10%, 100% 0%, 100% 100%, 0 100%)" }} />
-            <motion.div aria-hidden className="fixed inset-0" style={{ backgroundColor: DEFAULT_BG, y: whiteY, zIndex: -11, clipPath: "polygon(0 10%, 100% 0%, 100% 100%, 0 100%)" }} />
+            <motion.div aria-hidden className="fixed inset-x-0 bottom-0" style={{ backgroundColor: "#ff004d", y: redY, zIndex: -14, top: "-12vh", clipPath: SLANT_CLIP }} />
+            <motion.div aria-hidden className="fixed inset-x-0 bottom-0" style={{ backgroundColor: "#ffa300", y: yellowY, zIndex: -13, top: "-12vh", clipPath: SLANT_CLIP }} />
+            <motion.div aria-hidden className="fixed inset-x-0 bottom-0" style={{ backgroundColor: "#008751", y: greenY, zIndex: -12, top: "-12vh", clipPath: SLANT_CLIP }} />
+            <motion.div aria-hidden className="fixed inset-x-0 bottom-0" style={{ backgroundColor: DEFAULT_BG, y: whiteY, zIndex: -11, top: "-12vh", clipPath: SLANT_CLIP }} />
             <div ref={redRef}><RedSection /></div>
             <div ref={yellowRef}><YellowSection /></div>
             <div ref={greenRef}><GreenSection /></div>
