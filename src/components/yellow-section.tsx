@@ -49,7 +49,6 @@ export const YellowSection = () => {
     return (
         <section data-bg="yellow" className="min-h-screen flex items-center px-6 py-24">
             <div className="flex flex-col md:flex-row gap-12 max-w-6xl w-full mx-auto items-start">
-                {/* Left: headline */}
                 <motion.div
                     className="md:w-2/5 text-black space-y-5 md:sticky md:top-24"
                     initial="hidden"
@@ -58,18 +57,14 @@ export const YellowSection = () => {
                     custom={0}
                     variants={fadeUp}
                 >
-                    <p className="text-sm font-semibold uppercase tracking-widest text-black/40">
-                        Core Web Vitals
-                    </p>
                     <h2 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight">
                         You&apos;re making progress.<br />But not there yet.
                     </h2>
                     <p className="text-lg text-black/60 leading-relaxed">
-                        BasicRUM tracks every improvement in real time — so you know exactly what&apos;s working and what still needs attention.
+                        BasicRUM tracks every improvement in real time, so you know exactly what&apos;s working and what still needs attention.
                     </p>
                 </motion.div>
 
-                {/* Right: stacked cards */}
                 <div className="md:w-3/5 flex flex-col gap-6">
                     {/* Card 1: LCP Trend */}
                     <motion.div
@@ -81,9 +76,9 @@ export const YellowSection = () => {
                         variants={fadeUp}
                     >
                         <div className="mb-4">
-                            <span className="text-xs text-white/40 uppercase tracking-wider">LCP Trend — 1 Week</span>
+                            <span className="text-xs text-white/40 uppercase tracking-wider">LCP Trend: 1 Week</span>
                             <h3 className="text-white text-lg font-semibold mt-0.5">
-                                Getting better — just not fast enough
+                                Getting better, just not fast enough
                             </h3>
                         </div>
                         <ResponsiveContainer width="100%" height={180}>
@@ -142,7 +137,7 @@ export const YellowSection = () => {
                             </AreaChart>
                         </ResponsiveContainer>
                         <p className="text-white/40 text-xs mt-3">
-                            LCP is improving — but still above the 2,500ms passing threshold. Keep going.
+                            LCP is improving but still above the 2,500ms passing threshold. Keep going.
                         </p>
                     </motion.div>
 

@@ -154,7 +154,7 @@ export default function HeroSection() {
 										asChild
 										size="lg"
 										variant="default"
-										className="h-10.5 rounded-xl px-5"
+										className="h-12 rounded-xl px-5"
 									>
 										<Link href="https://demo.playground.basicrum.com/">
 											<span className="text-nowrap">See Demo</span>

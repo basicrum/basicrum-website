@@ -1,62 +1,46 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
 import { RedSection } from "./red-section";
 import { YellowSection } from "./yellow-section";
 import { GreenSection } from "./green-section";
 import { WhiteSection } from "./white-section";
 
-const BG_MAP: Record<string, string> = {
-    red: "#ff004d",
-    yellow: "#ffa300",
-    green: "#008751",
-    white: "#ffffff",
-};
-
 const DEFAULT_BG = "#09090b";
-const THRESHOLDS = Array.from({ length: 21 }, (_, i) => i * 0.05);
+
+function useSlideUp(ref: React.RefObject<HTMLDivElement | null>) {
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        // start sliding when section top hits viewport midpoint (50% visible),
+        // finish when section top is 20% from the top (80% visible)
+        offset: ["start 0.5", "start 0.2"],
+    });
+    return useTransform(scrollYProgress, [0, 1], ["100%", "0%"], { clamp: true });
+}
 
 export const ColorSections = () => {
-    const [bg, setBg] = useState(DEFAULT_BG);
-    const ratiosRef = useRef<Record<string, number>>({});
+    const redRef = useRef<HTMLDivElement>(null);
+    const yellowRef = useRef<HTMLDivElement>(null);
+    const greenRef = useRef<HTMLDivElement>(null);
+    const whiteRef = useRef<HTMLDivElement>(null);
 
-    const handleEntries = useCallback((entries: IntersectionObserverEntry[]) => {
-        for (const entry of entries) {
-            const key = (entry.target as HTMLElement).dataset.bg;
-            if (key) ratiosRef.current[key] = entry.intersectionRatio;
-        }
-
-        let maxRatio = 0;
-        let winner: string | null = null;
-        for (const [key, ratio] of Object.entries(ratiosRef.current)) {
-            if (ratio > maxRatio) {
-                maxRatio = ratio;
-                winner = key;
-            }
-        }
-
-        setBg(winner ? BG_MAP[winner] : DEFAULT_BG);
-    }, []);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(handleEntries, {
-            threshold: THRESHOLDS,
-        });
-        document.querySelectorAll("[data-bg]").forEach((el) => observer.observe(el));
-        return () => observer.disconnect();
-    }, [handleEntries]);
+    const redY = useSlideUp(redRef);
+    const yellowY = useSlideUp(yellowRef);
+    const greenY = useSlideUp(greenRef);
+    const whiteY = useSlideUp(whiteRef);
 
     return (
         <>
-            <div
-                aria-hidden
-                className="fixed inset-0 -z-10 transition-colors duration-700 ease-in-out"
-                style={{ backgroundColor: bg }}
-            />
-            <RedSection />
-            <YellowSection />
-            <GreenSection />
-            <WhiteSection />
+            <div aria-hidden className="fixed inset-0" style={{ backgroundColor: DEFAULT_BG, zIndex: -15 }} />
+            <motion.div aria-hidden className="fixed inset-0" style={{ backgroundColor: "#ff004d", y: redY, zIndex: -14 }} />
+            <motion.div aria-hidden className="fixed inset-0" style={{ backgroundColor: "#ffa300", y: yellowY, zIndex: -13 }} />
+            <motion.div aria-hidden className="fixed inset-0" style={{ backgroundColor: "#008751", y: greenY, zIndex: -12 }} />
+            <motion.div aria-hidden className="fixed inset-0" style={{ backgroundColor: DEFAULT_BG, y: whiteY, zIndex: -11 }} />
+            <div ref={redRef}><RedSection /></div>
+            <div ref={yellowRef}><YellowSection /></div>
+            <div ref={greenRef}><GreenSection /></div>
+            <div ref={whiteRef}><WhiteSection /></div>
         </>
     );
 };

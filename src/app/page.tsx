@@ -1,7 +1,7 @@
-import CallToAction from "@/components/call-to-action";
 import FeaturesSection from "@/components/content-5";
 import { FeaturesSectionGraphed } from "@/components/features-9";
 import HeroSection from "@/components/hero-section";
+import { TeaserSections } from "@/components/teaser-sections";
 import { ColorSections } from "@/components/color-sections";
 
 export default function Home() {
@@ -10,8 +10,8 @@ export default function Home() {
 			<HeroSection />
 			<FeaturesSectionGraphed />
 			<FeaturesSection />
+			<TeaserSections />
 			<ColorSections />
-			<CallToAction />
 		</>
 	);
 }

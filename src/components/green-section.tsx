@@ -40,7 +40,6 @@ export const GreenSection = () => {
     return (
         <section data-bg="green" className="min-h-screen flex flex-col items-center justify-center px-6 py-24">
             <div className="flex flex-col gap-12 max-w-6xl w-full mx-auto">
-                {/* Headline — centered */}
                 <motion.div
                     className="text-center text-white space-y-5"
                     initial="hidden"
@@ -49,18 +48,14 @@ export const GreenSection = () => {
                     custom={0}
                     variants={fadeUp}
                 >
-                    <p className="text-sm font-semibold uppercase tracking-widest text-white/50">
-                        Core Web Vitals
-                    </p>
                     <h2 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight">
                         All green.<br />Your users feel the difference.
                     </h2>
                     <p className="text-xl text-white/75 max-w-2xl mx-auto">
-                        BasicRUM confirmed the fix worked — with real data, from real users.
+                        BasicRUM confirmed the fix worked. With real data, from real users.
                     </p>
                 </motion.div>
 
-                {/* Cards — asymmetric 3/5 + 2/5 */}
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
                     {/* Card 1: Before/after scorecard (wider) */}
                     <motion.div
@@ -152,7 +147,7 @@ export const GreenSection = () => {
                                     />
                                 </AreaChart>
                             </ResponsiveContainer>
-                            <p className="text-white/30 text-xs mt-2 text-center">LCP — 14 days, all in the green zone</p>
+                            <p className="text-white/30 text-xs mt-2 text-center">LCP: 14 days, all in the green zone</p>
                         </div>
                     </motion.div>
                 </div>

@@ -141,9 +141,10 @@ const LCPBreakdown = () => (
                             background: "#1a1f2e",
                             border: "1px solid rgba(255,255,255,0.1)",
                             borderRadius: 6,
-                            color: "#fff",
                             fontSize: 11,
                         }}
+                        labelStyle={{ color: "rgba(255,255,255,0.5)" }}
+                        itemStyle={{ color: "#fff" }}
                         formatter={(v) => [v, "Page loads"]}
                         cursor={{ fill: "rgba(255,255,255,0.05)" }}
                     />
@@ -199,20 +200,17 @@ export const RedSection = () => {
                     custom={0}
                     variants={fadeUp}
                 >
-                    <p className="text-sm font-semibold uppercase tracking-widest text-white/60">
-                        Core Web Vitals
-                    </p>
                     <h2 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight">
                         Your website is<br />failing your users.
                     </h2>
                     <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto">
-                        BasicRUM shows you exactly where — and why.
+                        BasicRUM shows you exactly where, and why.
                     </p>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                     <motion.div
-                        className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5 flex flex-col gap-4"
+                        className="p-5 flex flex-col gap-4"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-60px" }}
@@ -231,7 +229,7 @@ export const RedSection = () => {
                     </motion.div>
 
                     <motion.div
-                        className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5 flex flex-col gap-4"
+                        className="p-5 flex flex-col gap-4"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-60px" }}
