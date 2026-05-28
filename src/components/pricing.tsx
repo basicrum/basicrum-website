@@ -74,7 +74,9 @@ export default function Pricing() {
 							<ul className="list-outside space-y-3 text-sm">
 								{[
 									"Everything in Free Plan",
+									"AI Features",
 									"5GB Cloud Storage",
+									"Access to Resource Timing data",
 									"Email and Chat Support",
 									"Access to Community Forum",
 									"Monthly Product Updates",
@@ -110,8 +112,10 @@ export default function Pricing() {
 							<ul className="list-outside space-y-3 text-sm">
 								{[
 									"Everything in Pro Plan",
-									"5GB Cloud Storage",
-									"Email and Chat Support",
+									"Custom Sized Cloud Storage",
+									"Elevated Support",
+									"Guranteed SLA Uptime",
+									"Onboarding Assistance",
 								].map((item, index) => (
 									<li key={index} className="flex items-center gap-2">
 										<Check className="size-3" />

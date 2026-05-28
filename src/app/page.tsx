@@ -1,8 +1,9 @@
-import CallToAction from "@/components/call-to-action";
 import FeaturesSection from "@/components/content-5";
 import { FeaturesSectionGraphed } from "@/components/features-9";
-
 import HeroSection from "@/components/hero-section";
+import { TeaserSections } from "@/components/teaser-sections";
+import { ColorSections } from "@/components/color-sections";
+import { AISection } from "@/components/ai-section";
 
 export default function Home() {
 	return (
@@ -10,7 +11,9 @@ export default function Home() {
 			<HeroSection />
 			<FeaturesSectionGraphed />
 			<FeaturesSection />
-			<CallToAction />
+			<AISection />
+			<TeaserSections />
+			<ColorSections />
 		</>
 	);
 }

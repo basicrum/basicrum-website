@@ -1,61 +1,59 @@
-import {
-	Cpu,
-	DatabaseZap,
-	EarthLock,
-	Feather,
-	Lock,
-	PackageOpen,
-	Sparkles,
-	Zap,
-} from "lucide-react";
+import type React from "react";
+import { FastCard } from "@/components/features/fast-card";
+import { PowerfulCard } from "@/components/features/powerful-card";
+import { PrivacyCard } from "@/components/features/privacy-card";
+import { AICard } from "@/components/features/ai-card";
+import { OpenSourceCard } from "@/components/features/opensource-card";
+import { LightweightCard } from "@/components/features/lightweight-card";
+import { EUCard } from "@/components/features/eu-card";
+import { ClickhouseCard } from "@/components/features/clickhouse-card";
 
-const FEATURES = [
+type Feature = {
+	title: string;
+	description: string;
+	Component: React.ComponentType;
+};
+
+const FEATURES: Feature[] = [
 	{
-		icon: Zap,
 		title: "Fast",
-		description:
-			"Basicrum is performance oriented from get go. Ready to handle high traffic.",
+		description: "Performance-oriented from day one. Ready to handle high traffic with minimal overhead.",
+		Component: FastCard,
 	},
 	{
-		icon: Cpu,
 		title: "Powerful",
-		description:
-			"Shipped with a powerful dashboard and a set of widgets to help users monitor their users effectively.",
+		description: "A powerful dashboard and set of widgets to monitor your users effectively in real-time.",
+		Component: PowerfulCard,
 	},
 	{
-		icon: Lock,
-		title: "Privacy",
-		description: "Hosted in EU and GDPR compliant",
+		title: "Privacy First",
+		description: "Hosted in EU, GDPR compliant, and zero third-party tracking.",
+		Component: PrivacyCard,
 	},
 	{
-		icon: Sparkles,
 		title: "AI Enhanced",
-		description:
-			"We use RAG to help users facilitate LLMs to extract more fine grained information",
+		description: "LLM-powered insights help you extract fine-grained performance recommendations automatically.",
+		Component: AICard,
 	},
 	{
-		icon: PackageOpen,
 		title: "Open Source",
-		description:
-			"Basicrum is open source and free to use. You can self host it or use our hosted version.",
+		description: "Free to use and fully self-hostable. Inspect, extend, and contribute on GitHub.",
+		Component: OpenSourceCard,
 	},
 	{
-		icon: Feather,
 		title: "Lightweight",
-		description:
-			"The app is lightweight and easy to install. It runs on any server with Node.js.",
+		description: "A tiny beacon that won't slow down the page it's trying to monitor.",
+		Component: LightweightCard,
 	},
 	{
-		icon: EarthLock,
 		title: "Hosted in EU",
-		description:
-			"We host exclusively in the EU and comply with GDPR regulations.",
+		description: "Exclusively EU infrastructure with full GDPR compliance and low-latency guarantees.",
+		Component: EUCard,
 	},
 	{
-		icon: DatabaseZap,
 		title: "Powered by Clickhouse",
-		description:
-			"Basicrum is powered by Clickhouse, a fast open-source OLAP database management system.",
+		description: "Blazing-fast analytics on billions of events — powered by open-source OLAP.",
+		Component: ClickhouseCard,
 	},
 ];
 
@@ -69,8 +67,7 @@ export default function FeaturesSection() {
 						being, well.. basic.
 					</h2>
 					<p>
-						Basicrum brings simplicity and the power of open source to real user
-						monitoring.
+						Basicrum brings simplicity and the power of open source to real user monitoring.
 					</p>
 				</div>
 				<img
@@ -79,15 +76,16 @@ export default function FeaturesSection() {
 					alt="about-basicrum"
 					loading="lazy"
 				/>
-
-				<div className="relative mx-auto grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-8 lg:grid-cols-4">
-					{FEATURES.map(({ icon: Icon, title, description }) => (
-						<div key={title} className="space-y-2">
-							<div className="flex items-center gap-2">
-								<Icon className="size-4" />
-								<h3 className="text-sm font-medium">{title}</h3>
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+					{FEATURES.map(({ title, description, Component }) => (
+						<div key={title} className="bg-background p-6 flex flex-col">
+							<div className="flex-1 min-h-[130px] flex flex-col justify-center">
+								<Component />
 							</div>
-							<p className="text-muted-foreground text-sm">{description}</p>
+							<div className="space-y-1.5 mt-auto pt-4">
+								<h3 className="text-sm font-semibold">{title}</h3>
+								<p className="text-xs text-muted-foreground leading-relaxed">{description}</p>
+							</div>
 						</div>
 					))}
 				</div>
