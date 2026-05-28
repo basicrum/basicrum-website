@@ -27,12 +27,12 @@ const FEATURES: Feature[] = [
 	},
 	{
 		title: "Privacy First",
-		description: "Hosted in EU, GDPR compliant, and zero third-party tracking — ever.",
+		description: "Hosted in EU, GDPR compliant, and zero third-party tracking.",
 		Component: PrivacyCard,
 	},
 	{
 		title: "AI Enhanced",
-		description: "RAG-powered insights help you extract fine-grained performance recommendations automatically.",
+		description: "LLM-powered insights help you extract fine-grained performance recommendations automatically.",
 		Component: AICard,
 	},
 	{

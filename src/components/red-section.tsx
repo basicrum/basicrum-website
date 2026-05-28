@@ -204,7 +204,7 @@ export const RedSection = () => {
                         Your website is<br />failing your users.
                     </h2>
                     <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto">
-                        BasicRUM shows you exactly where, and why.
+                        Basicrum shows you exactly where, and why.
                     </p>
                 </motion.div>
 

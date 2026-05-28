@@ -52,7 +52,7 @@ export const GreenSection = () => {
                         All green.<br />Your users feel the difference.
                     </h2>
                     <p className="text-xl text-white/75 max-w-2xl mx-auto">
-                        BasicRUM confirmed the fix worked. With real data, from real users.
+                        Basicrum confirmed the fix worked. With real data, from real users.
                     </p>
                 </motion.div>
 
@@ -68,7 +68,7 @@ export const GreenSection = () => {
                     >
                         <div className="mb-6">
                             <span className="text-xs text-white/40 uppercase tracking-wider">Score Improvement</span>
-                            <h3 className="text-white text-lg font-semibold mt-0.5">Before & after BasicRUM</h3>
+                            <h3 className="text-white text-lg font-semibold mt-0.5">Before & after Basicrum</h3>
                         </div>
                         <div className="space-y-3">
                             {metrics.map((m) => (

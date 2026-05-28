@@ -61,7 +61,7 @@ export const YellowSection = () => {
                         You&apos;re making progress.<br />But not there yet.
                     </h2>
                     <p className="text-lg text-black/60 leading-relaxed">
-                        BasicRUM tracks every improvement in real time, so you know exactly what&apos;s working and what still needs attention.
+                        Basicrum tracks every improvement in real time, so you know exactly what&apos;s working and what still needs attention.
                     </p>
                 </motion.div>
 
