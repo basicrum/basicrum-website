@@ -4,8 +4,8 @@ import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 
 const bars = [
-	{ label: "Others", size: "47 KB", pct: 88, color: "#ef444480" },
-	{ label: "Basicrum", size: "3.2 KB", pct: 7, color: "#008751" },
+	{ label: "Typical alternatives", pct: 88, color: "#ef444480" },
+	{ label: "Basicrum beacon", pct: 52, color: "#008751" },
 ];
 
 export function LightweightCard() {
@@ -19,9 +19,8 @@ export function LightweightCard() {
 			</div>
 			{bars.map((b, i) => (
 				<div key={b.label} className="space-y-1">
-					<div className="flex justify-between text-xs">
+					<div className="text-xs">
 						<span>{b.label}</span>
-						<span className="font-mono text-muted-foreground">{b.size}</span>
 					</div>
 					<div className="h-2 rounded-full bg-muted overflow-hidden">
 						<motion.div
@@ -40,7 +39,7 @@ export function LightweightCard() {
 				animate={inView ? { opacity: 1 } : {}}
 				transition={{ delay: 1.2 }}
 			>
-				93% smaller than alternatives
+				Smaller than typical alternatives
 			</motion.div>
 		</div>
 	);

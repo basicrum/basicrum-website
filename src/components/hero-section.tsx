@@ -1,10 +1,15 @@
-import React from "react";
 import Link from "next/link";
-import { ArrowRight, ChevronRight, Mail, SendHorizonal } from "lucide-react";
+import { ArrowRight, Mail, SendHorizonal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { TextEffect } from "@/components/ui/text-effect";
 import { AnimatedGroup } from "@/components/ui/animated-group";
+
+
+// const GREEN = "#008751";
+// const RED = "#ff004d";
+// const YELLOW = "#ffa300";
+
 
 const transitionVariants = {
 	item: {
@@ -18,7 +23,7 @@ const transitionVariants = {
 			filter: "blur(0px)",
 			y: 0,
 			transition: {
-				type: "spring",
+				type: "spring" as const,
 				bounce: 0.3,
 				duration: 1.5,
 			},
@@ -40,51 +45,17 @@ export default function HeroSection() {
 				</div>
 				<section>
 					<div className="relative pt-24 md:pt-36">
-						{/* <AnimatedGroup
-							variants={{
-								container: {
-									visible: {
-										transition: {
-											delayChildren: 1,
-										},
-									},
-								},
-								item: {
-									hidden: {
-										opacity: 0,
-										y: 20,
-									},
-									visible: {
-										opacity: 1,
-										y: 0,
-										transition: {
-											type: "spring",
-											bounce: 0.3,
-											duration: 2,
-										},
-									},
-								},
-							}}
-							className="absolute inset-0 -z-20"
-						>
-							<Image
-								src="https://res.cloudinary.com/dg4jhba5c/image/upload/v1741605538/night-background_ni3vqb.jpg"
-								alt="background"
-								className="absolute inset-x-0 top-56 -z-20 hidden lg:top-32 dark:block"
-								width="3276"
-								height="4095"
-							/>
-						</AnimatedGroup> */}
 						<div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]" />
 						<div className="mx-auto max-w-7xl px-6">
 							<div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
 								<AnimatedGroup variants={transitionVariants}>
 									<Link
-										href="#link"
+										href="https://demo.playground.basicrum.com/"
+										target="_blank"
 										className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950"
 									>
 										<span className="text-foreground text-sm">
-											Introducing Basicrum 1.0 (soon)
+											See it in action
 										</span>
 										<span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700" />
 
@@ -102,7 +73,7 @@ export default function HeroSection() {
 								</AnimatedGroup>
 
 								<TextEffect
-									preset="fade-in-blur"
+									preset="blur"
 									speedSegment={0.3}
 									as="h1"
 									className="mt-8 text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem]"
@@ -135,31 +106,6 @@ export default function HeroSection() {
 									}}
 									className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row"
 								>
-									{/* <div
-										key={1}
-										className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5"
-									>
-										<Button
-											asChild
-											size="lg"
-											className="rounded-xl px-5 text-base"
-										>
-											<Link href="#link">
-												<span className="text-nowrap">Start Monitoring</span>
-											</Link>
-										</Button>
-									</div> */}
-									<Button
-										key={2}
-										asChild
-										size="lg"
-										variant="default"
-										className="h-12 rounded-xl px-5"
-									>
-										<Link href="https://demo.playground.basicrum.com/">
-											<span className="text-nowrap">See Demo</span>
-										</Link>
-									</Button>
 									<form
 										action="https://api.web3forms.com/submit"
 										method="POST"
@@ -243,96 +189,6 @@ export default function HeroSection() {
 						</AnimatedGroup>
 					</div>
 				</section>
-				{/* <section className="bg-background pb-16 pt-16 md:pb-32">
-					<div className="group relative m-auto max-w-5xl px-6">
-						<div className="absolute inset-0 z-10 flex scale-95 items-center justify-center opacity-0 duration-500 group-hover:scale-100 group-hover:opacity-100">
-							<Link
-								href="/"
-								className="block text-sm duration-150 hover:opacity-75"
-							>
-								<span> Meet Our Customers</span>
-
-								<ChevronRight className="ml-1 inline-block size-3" />
-							</Link>
-						</div>
-						<div className="group-hover:blur-xs mx-auto mt-12 grid max-w-2xl grid-cols-4 gap-x-12 gap-y-8 transition-all duration-500 group-hover:opacity-50 sm:gap-x-16 sm:gap-y-14">
-							<div className="flex">
-								<img
-									className="mx-auto h-5 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/nvidia.svg"
-									alt="Nvidia Logo"
-									height="20"
-									width="auto"
-								/>
-							</div>
-
-							<div className="flex">
-								<img
-									className="mx-auto h-4 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/column.svg"
-									alt="Column Logo"
-									height="16"
-									width="auto"
-								/>
-							</div>
-							<div className="flex">
-								<img
-									className="mx-auto h-4 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/github.svg"
-									alt="GitHub Logo"
-									height="16"
-									width="auto"
-								/>
-							</div>
-							<div className="flex">
-								<img
-									className="mx-auto h-5 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/nike.svg"
-									alt="Nike Logo"
-									height="20"
-									width="auto"
-								/>
-							</div>
-							<div className="flex">
-								<img
-									className="mx-auto h-5 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
-									alt="Lemon Squeezy Logo"
-									height="20"
-									width="auto"
-								/>
-							</div>
-							<div className="flex">
-								<img
-									className="mx-auto h-4 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/laravel.svg"
-									alt="Laravel Logo"
-									height="16"
-									width="auto"
-								/>
-							</div>
-							<div className="flex">
-								<img
-									className="mx-auto h-7 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/lilly.svg"
-									alt="Lilly Logo"
-									height="28"
-									width="auto"
-								/>
-							</div>
-
-							<div className="flex">
-								<img
-									className="mx-auto h-6 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/openai.svg"
-									alt="OpenAI Logo"
-									height="24"
-									width="auto"
-								/>
-							</div>
-						</div>
-					</div>
-				</section> */}
 			</main>
 		</>
 	);
