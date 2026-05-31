@@ -4,7 +4,7 @@ import { motion, useInView } from "motion/react";
 import { Lock } from "lucide-react";
 import { useRef } from "react";
 
-const RAW = ["user_id: •••••••", "ip: •••.•••.•.•••", "path: /checkout", "session: ••••••••"];
+const RAW = ["user_id: •••••••", "path: /checkout", "session: ••••••••"];
 const CLEAN = ["lcp: 3.1s", "page: /checkout", "spike at: 14:23 UTC"];
 
 export function SecureCard() {
