@@ -5,6 +5,7 @@ import { ModelsCard } from "@/components/ai-features/models-card";
 import { ChatCard } from "@/components/ai-features/chat-card";
 import { WidgetsCard } from "@/components/ai-features/widgets-card";
 import { SecureCard } from "@/components/ai-features/secure-card";
+import Image from "next/image";
 
 
 
@@ -86,7 +87,15 @@ export function AISection() {
 						actionable insight.
 					</p>
 				</div>
-
+				<Image
+					className="rounded-(--radius)"
+					src="/insights.png"
+					alt="about-basicrum"
+					loading="lazy"
+					width="2939"
+					height="1960"
+					//2939 × 1960
+				/>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
 					{AI_FEATURES.map(({ title, description, span, Component }) => (
 						<div key={title} className={`${span === 2 ? "md:col-span-2" : "col-span-1"} bg-background`}>

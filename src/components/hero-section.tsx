@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { ArrowRight, Mail, SendHorizonal } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { TextEffect } from "@/components/ui/text-effect";
 import { AnimatedGroup } from "@/components/ui/animated-group";
+import { EmailSignupForm } from "@/components/email-signup-form";
 
 
 // const GREEN = "#008751";
@@ -106,47 +106,7 @@ export default function HeroSection() {
 									}}
 									className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row"
 								>
-									<form
-										action="https://api.web3forms.com/submit"
-										method="POST"
-										className="mx-auto max-w-sm"
-									>
-										<div className="bg-background has-[input:focus]:ring-muted relative grid grid-cols-[1fr_auto] items-center rounded-[calc(var(--radius)+0.5rem)] border pr-2 shadow shadow-zinc-950/5 has-[input:focus]:ring-2">
-											<Mail className="pointer-events-none absolute inset-y-0 left-4 my-auto size-4" />
-
-											<input
-												placeholder="Your mail address"
-												className="h-12 w-full bg-transparent pl-12 focus:outline-none"
-												type="email"
-												name="email"
-											/>
-											<input
-												type="hidden"
-												name="access_key"
-												value="53f82be5-9942-437a-bc85-34cedca69437"
-											/>
-											<input
-												type="checkbox"
-												name="botcheck"
-												className="hidden"
-												style={{ display: "none" }}
-											/>
-											<div className="md:pr-1.5 lg:pr-0">
-												<Button
-													aria-label="submit"
-													size="sm"
-													variant="ghost"
-													className="rounded-(--radius)"
-												>
-													<span className="hidden md:block">Get Started</span>
-													<SendHorizonal
-														className="relative mx-auto size-5 md:hidden"
-														strokeWidth={2}
-													/>
-												</Button>
-											</div>
-										</div>
-									</form>
+									<EmailSignupForm size="sm" />
 								</AnimatedGroup>
 							</div>
 						</div>
@@ -172,17 +132,19 @@ export default function HeroSection() {
 								<div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
 									<Image
 										className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
-										src="/app-home.png"
+										src="/new-app-home.png"
 										alt="app screen"
 										width="3456"
 										height="1982"
+										priority
 									/>
 									<Image
 										className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border dark:hidden"
-										src="/app-home.png"
+										src="/new-app-home.png"
 										alt="app screen"
 										width="3456"
 										height="1982"
+										priority
 									/>
 								</div>
 							</div>
