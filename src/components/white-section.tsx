@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { ChevronRight, ArrowRight } from "lucide-react";
+import { EmailSignupForm } from "@/components/email-signup-form";
 
 const stops = [
     { origin: "#ff004d", label: "Failing" },
@@ -80,7 +81,7 @@ export const WhiteSection = () => {
                 <p className="text-lg max-w-md text-white/50">
                     Most websites never find out why they&apos;re slow.<br />Yours doesn&apos;t have to be one of them.
                 </p>
-                <motion.a
+                {/* <motion.a
                     href="https://demo.playground.basicrum.com"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -89,7 +90,8 @@ export const WhiteSection = () => {
                 >
                     Start monitoring for free
                     <ArrowRight className="w-4 h-4" />
-                </motion.a>
+                </motion.a> */}
+                <EmailSignupForm size="lg"/>
             </motion.div>
         </section>
     );

@@ -7,6 +7,7 @@ import { OpenSourceCard } from "@/components/features/opensource-card";
 import { LightweightCard } from "@/components/features/lightweight-card";
 import { EUCard } from "@/components/features/eu-card";
 import { ClickhouseCard } from "@/components/features/clickhouse-card";
+import Image from "next/image";
 
 type Feature = {
 	title: string;
@@ -70,11 +71,14 @@ export default function FeaturesSection() {
 						Basicrum brings simplicity and the power of open source to real user monitoring.
 					</p>
 				</div>
-				<img
+				<Image
 					className="rounded-(--radius)"
-					src="/lcp.png"
+					src="/new-lcp.png"
 					alt="about-basicrum"
 					loading="lazy"
+					width="3453"
+					height="1610"
+					//3453 × 1610
 				/>
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
 					{FEATURES.map(({ title, description, Component }) => (

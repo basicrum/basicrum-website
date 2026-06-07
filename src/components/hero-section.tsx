@@ -1,10 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, ChevronRight, Mail, SendHorizonal } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { TextEffect } from "@/components/ui/text-effect";
 import { AnimatedGroup } from "@/components/ui/animated-group";
+import { EmailSignupForm } from "@/components/email-signup-form";
 
 const transitionVariants = {
 	item: {
@@ -135,72 +135,7 @@ export default function HeroSection() {
 									}}
 									className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row"
 								>
-									{/* <div
-										key={1}
-										className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5"
-									>
-										<Button
-											asChild
-											size="lg"
-											className="rounded-xl px-5 text-base"
-										>
-											<Link href="#link">
-												<span className="text-nowrap">Start Monitoring</span>
-											</Link>
-										</Button>
-									</div> */}
-									<Button
-										key={2}
-										asChild
-										size="lg"
-										variant="default"
-										className="h-12 rounded-xl px-5"
-									>
-										<Link href="https://demo.playground.basicrum.com/">
-											<span className="text-nowrap">See Demo</span>
-										</Link>
-									</Button>
-									<form
-										action="https://api.web3forms.com/submit"
-										method="POST"
-										className="mx-auto max-w-sm"
-									>
-										<div className="bg-background has-[input:focus]:ring-muted relative grid grid-cols-[1fr_auto] items-center rounded-[calc(var(--radius)+0.5rem)] border pr-2 shadow shadow-zinc-950/5 has-[input:focus]:ring-2">
-											<Mail className="pointer-events-none absolute inset-y-0 left-4 my-auto size-4" />
-
-											<input
-												placeholder="Your mail address"
-												className="h-12 w-full bg-transparent pl-12 focus:outline-none"
-												type="email"
-												name="email"
-											/>
-											<input
-												type="hidden"
-												name="access_key"
-												value="53f82be5-9942-437a-bc85-34cedca69437"
-											/>
-											<input
-												type="checkbox"
-												name="botcheck"
-												className="hidden"
-												style={{ display: "none" }}
-											/>
-											<div className="md:pr-1.5 lg:pr-0">
-												<Button
-													aria-label="submit"
-													size="sm"
-													variant="ghost"
-													className="rounded-(--radius)"
-												>
-													<span className="hidden md:block">Get Started</span>
-													<SendHorizonal
-														className="relative mx-auto size-5 md:hidden"
-														strokeWidth={2}
-													/>
-												</Button>
-											</div>
-										</div>
-									</form>
+									<EmailSignupForm size="sm" />
 								</AnimatedGroup>
 							</div>
 						</div>
@@ -226,113 +161,25 @@ export default function HeroSection() {
 								<div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
 									<Image
 										className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
-										src="/app-home.png"
+										src="/new-app-home.png"
 										alt="app screen"
 										width="3456"
 										height="1982"
+										priority
 									/>
 									<Image
 										className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border dark:hidden"
-										src="/app-home.png"
+										src="/new-app-home.png"
 										alt="app screen"
 										width="3456"
 										height="1982"
+										priority
 									/>
 								</div>
 							</div>
 						</AnimatedGroup>
 					</div>
 				</section>
-				{/* <section className="bg-background pb-16 pt-16 md:pb-32">
-					<div className="group relative m-auto max-w-5xl px-6">
-						<div className="absolute inset-0 z-10 flex scale-95 items-center justify-center opacity-0 duration-500 group-hover:scale-100 group-hover:opacity-100">
-							<Link
-								href="/"
-								className="block text-sm duration-150 hover:opacity-75"
-							>
-								<span> Meet Our Customers</span>
-
-								<ChevronRight className="ml-1 inline-block size-3" />
-							</Link>
-						</div>
-						<div className="group-hover:blur-xs mx-auto mt-12 grid max-w-2xl grid-cols-4 gap-x-12 gap-y-8 transition-all duration-500 group-hover:opacity-50 sm:gap-x-16 sm:gap-y-14">
-							<div className="flex">
-								<img
-									className="mx-auto h-5 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/nvidia.svg"
-									alt="Nvidia Logo"
-									height="20"
-									width="auto"
-								/>
-							</div>
-
-							<div className="flex">
-								<img
-									className="mx-auto h-4 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/column.svg"
-									alt="Column Logo"
-									height="16"
-									width="auto"
-								/>
-							</div>
-							<div className="flex">
-								<img
-									className="mx-auto h-4 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/github.svg"
-									alt="GitHub Logo"
-									height="16"
-									width="auto"
-								/>
-							</div>
-							<div className="flex">
-								<img
-									className="mx-auto h-5 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/nike.svg"
-									alt="Nike Logo"
-									height="20"
-									width="auto"
-								/>
-							</div>
-							<div className="flex">
-								<img
-									className="mx-auto h-5 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
-									alt="Lemon Squeezy Logo"
-									height="20"
-									width="auto"
-								/>
-							</div>
-							<div className="flex">
-								<img
-									className="mx-auto h-4 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/laravel.svg"
-									alt="Laravel Logo"
-									height="16"
-									width="auto"
-								/>
-							</div>
-							<div className="flex">
-								<img
-									className="mx-auto h-7 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/lilly.svg"
-									alt="Lilly Logo"
-									height="28"
-									width="auto"
-								/>
-							</div>
-
-							<div className="flex">
-								<img
-									className="mx-auto h-6 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/openai.svg"
-									alt="OpenAI Logo"
-									height="24"
-									width="auto"
-								/>
-							</div>
-						</div>
-					</div>
-				</section> */}
 			</main>
 		</>
 	);
