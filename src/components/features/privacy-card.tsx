@@ -3,8 +3,7 @@ import { ShieldCheck } from "lucide-react";
 const items = [
 	"GDPR Compliant",
 	"No third-party tracking",
-	"Data stays in EU",
-	"End-to-end encrypted",
+	"Data stays in EU"
 ];
 
 export function PrivacyCard() {
